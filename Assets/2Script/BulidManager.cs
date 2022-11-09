@@ -17,15 +17,16 @@ public class BulidManager : MonoBehaviour
     }
 
     public GameObject standardTurretPrefab;
+    public GameObject anotherTurretPrefab;
 
-    void Start()
-    {
-        turretToBuild = standardTurretPrefab;
-    }
     private GameObject turretToBuild;
 
     public GameObject GetTurretToBuild()
     {
         return turretToBuild;
+    }
+    public void SetTurretBulid(GameObject turret)
+    {
+        turretToBuild = turret;
     }
 }

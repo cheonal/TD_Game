@@ -16,11 +16,11 @@ public class Shop : MonoBehaviour
         Debug.Log("1");
         bulidManager.SetTurretBulid(bulidManager.standardTurretPrefab);
     }
-    public void PurchaseAnotherTurret()
+    public void PurchaseMissileLauncher()
     {
         Debug.Log("2");
-        bulidManager.SetTurretBulid(bulidManager.anotherTurretPrefab);
+        bulidManager.SetTurretBulid(bulidManager.missileLauncherPrefab);
 
-    }
+    }   
 }
 

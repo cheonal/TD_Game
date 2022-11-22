@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Shop : MonoBehaviour
 {
+    public TurretBlueprint standardTurret;
+    public TurretBlueprint missleLauncher;
     BulidManager bulidManager;
 
     void Start()
@@ -11,15 +13,15 @@ public class Shop : MonoBehaviour
         bulidManager = BulidManager.instance;
         
     }
-    public void PurchaseStandardTurret()
+    public void SlectStandardTurret()
     {
         Debug.Log("1");
-        bulidManager.SetTurretBulid(bulidManager.standardTurretPrefab);
+        bulidManager.SelectTurretToBulid(standardTurret);
     }
-    public void PurchaseMissileLauncher()
+    public void SlectMissileLauncher()
     {
         Debug.Log("2");
-        bulidManager.SetTurretBulid(bulidManager.missileLauncherPrefab);
+        bulidManager.SelectTurretToBulid(missleLauncher);
 
     }   
 }

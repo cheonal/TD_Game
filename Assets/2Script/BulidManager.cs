@@ -19,13 +19,21 @@ public class BulidManager : MonoBehaviour
     public GameObject standardTurretPrefab;
     public GameObject missileLauncherPrefab;
 
-    private GameObject turretToBuild;
+    private TurretBlueprint turretToBuild;
 
-    public GameObject GetTurretToBuild()
+    public bool CanBulid
     {
-        return turretToBuild;
+        get
+        {
+            return turretToBuild != null;
+        }
     }
-    public void SetTurretBulid(GameObject turret)
+    public void BulidTurretOn (Node node)
+    {
+        GameObject turret = (GameObject)Instantiate(turretToBuild.prefabs, node.GetBulidPosition(), Quaternion.identity);
+        node.turret = turret;
+    }
+    public void SelectTurretToBulid(TurretBlueprint turret)
     {
         turretToBuild = turret;
     }

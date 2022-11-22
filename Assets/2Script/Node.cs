@@ -7,7 +7,9 @@ public class Node : MonoBehaviour
 {
     public Color hoverColor;
     public Vector3 positonOffset;
-    private GameObject turret;
+
+    [Header("Optioanl")]
+    public GameObject turret;
 
 
     private Renderer rend;
@@ -20,11 +22,15 @@ public class Node : MonoBehaviour
         bulidManager = BulidManager.instance;
     }
 
+    public Vector3 GetBulidPosition()
+    {
+        return transform.position + positonOffset;
+    }
     void OnMouseDown()
     {
         if (EventSystem.current.IsPointerOverGameObject())
             return;
-        if (bulidManager.GetTurretToBuild() == null)
+        if (!bulidManager.CanBulid)
         {
             return;
         }
@@ -34,8 +40,7 @@ public class Node : MonoBehaviour
             return;
         }
 
-        GameObject turretToBulid = bulidManager.GetTurretToBuild();
-        turret = (GameObject)Instantiate(turretToBulid, transform.position + positonOffset, transform.rotation);
+        bulidManager.BulidTurretOn(this);
 
 
 
@@ -45,7 +50,7 @@ public class Node : MonoBehaviour
 
         if (EventSystem.current.IsPointerOverGameObject())
             return;
-        if (bulidManager.GetTurretToBuild() == null)
+        if (bulidManager.CanBulid)
         {
             return;
         }

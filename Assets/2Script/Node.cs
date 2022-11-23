@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 public class Node : MonoBehaviour
 {
     public Color hoverColor;
+    public Color notEnoughMoneyColor;
     public Vector3 positonOffset;
 
     [Header("Optioanl")]
@@ -50,11 +51,18 @@ public class Node : MonoBehaviour
 
         if (EventSystem.current.IsPointerOverGameObject())
             return;
-        if (bulidManager.CanBulid)
+        if (!bulidManager.CanBulid)
         {
             return;
         }
-        rend.material.color = hoverColor;
+        if (bulidManager.HasMoney)
+        {
+            rend.material.color = hoverColor;
+        }
+        else
+        {
+            rend.material.color = notEnoughMoneyColor;
+        }
     }
     void OnMouseExit()
     {

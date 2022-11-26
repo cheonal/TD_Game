@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    private bool doMonvement = true;
+    private bool doMonvement = false;
 
     public float panSpeed = 30f;
     public float panBorderThickness = 10f;

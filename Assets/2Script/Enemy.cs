@@ -26,9 +26,12 @@ public class Enemy : MonoBehaviour
     }
     void Die()
     {
+        PlayerStats.Money += value;
         GameObject effect = Instantiate(deathEffect, transform.position, Quaternion.identity);
         Destroy(effect, 5f);
-        PlayerStats.Money += value;
+
+        WaveSpawner.EnemiesAlives--;
+
         Destroy(gameObject);
     }
     void Update()
@@ -58,6 +61,7 @@ public class Enemy : MonoBehaviour
     void EndPath()
     {
         PlayerStats.Lives--;
+        WaveSpawner.EnemiesAlives--;
         Destroy(gameObject);
     }
 }

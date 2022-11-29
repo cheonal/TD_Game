@@ -589,8 +589,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fec76dca344bdd489492cf014fab3d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  standardTurretPrefab: {fileID: 1557424659578614240, guid: 41d6b3c94b77ef441aa4dfdb85b065e9, type: 3}
-  missileLauncherPrefab: {fileID: 6160920850352606354, guid: 797a9c270b481474e928b9119098974f, type: 3}
   BuildEffect: {fileID: 7833957871850052109, guid: a7d566fc7b0dc2d4583ea2e3222e89e5, type: 3}
 --- !u!114 &52649327
 MonoBehaviour:
@@ -5525,7 +5523,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 34.122627, y: 61.1}
+  m_AnchoredPosition: {x: 34.12268, y: 61.099976}
   m_SizeDelta: {x: 68.245255, y: 257.4038}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &618165743
@@ -5610,6 +5608,9 @@ MonoBehaviour:
   missleLauncher:
     prefabs: {fileID: 6160920850352606354, guid: 797a9c270b481474e928b9119098974f, type: 3}
     cost: 250
+  LaserBeamer:
+    prefabs: {fileID: 2807618851216971312, guid: 623f8bd1cbc43e14eb108ffd8fd7f3c5, type: 3}
+    cost: 350
 --- !u!1001 &621171138
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5836,6 +5837,10 @@ PrefabInstance:
       value: 0.15352438
       objectReference: {fileID: 0}
     - target: {fileID: 1362128036450294181, guid: 406391d869786af4c82ae73c047e2f32, type: 3}
+      propertyPath: m_Text
+      value: $350
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362128036450294181, guid: 406391d869786af4c82ae73c047e2f32, type: 3}
       propertyPath: m_FontData.m_FontSize
       value: 15
       objectReference: {fileID: 0}
@@ -5849,7 +5854,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8878351675917874544, guid: 406391d869786af4c82ae73c047e2f32, type: 3}
       propertyPath: m_Name
-      value: MissileLauncherItem
+      value: LaserBeamerItem
+      objectReference: {fileID: 0}
+    - target: {fileID: 8878351675917874546, guid: 406391d869786af4c82ae73c047e2f32, type: 3}
+      propertyPath: m_PreferredWidth
+      value: 120
+      objectReference: {fileID: 0}
+    - target: {fileID: 8878351675917874546, guid: 406391d869786af4c82ae73c047e2f32, type: 3}
+      propertyPath: m_PreferredHeight
+      value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 8878351675917874547, guid: 406391d869786af4c82ae73c047e2f32, type: 3}
       propertyPath: m_Pivot.x
@@ -5935,13 +5948,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8878351675917874548, guid: 406391d869786af4c82ae73c047e2f32, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9bb84394d5b45264c9fa54e36da931a3, type: 3}
     - target: {fileID: 8878351675917874549, guid: 406391d869786af4c82ae73c047e2f32, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 618165746}
     - target: {fileID: 8878351675917874549, guid: 406391d869786af4c82ae73c047e2f32, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SlectMissileLauncher
+      value: SelectLaserBeamer
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 406391d869786af4c82ae73c047e2f32, type: 3}
@@ -17365,7 +17382,7 @@ PrefabInstance:
       objectReference: {fileID: 618165746}
     - target: {fileID: 8878351675917874549, guid: 406391d869786af4c82ae73c047e2f32, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: SlectMissileLauncher
+      value: SelectMissileLauncher
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 406391d869786af4c82ae73c047e2f32, type: 3}
@@ -17582,6 +17599,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 618165746}
+    - target: {fileID: 7625014131465986365, guid: 33243cc1b530f1244b375256e29e2dd7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SelectStandardTurret
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33243cc1b530f1244b375256e29e2dd7, type: 3}
 --- !u!224 &7625014131253075957 stripped

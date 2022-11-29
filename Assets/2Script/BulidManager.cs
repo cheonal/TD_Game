@@ -16,8 +16,6 @@ public class BulidManager : MonoBehaviour
         instance = this;
     }
 
-    public GameObject standardTurretPrefab;
-    public GameObject missileLauncherPrefab;
     public GameObject BuildEffect;
     private TurretBlueprint turretToBuild;
 

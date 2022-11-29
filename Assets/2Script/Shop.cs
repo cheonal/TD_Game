@@ -6,6 +6,7 @@ public class Shop : MonoBehaviour
 {
     public TurretBlueprint standardTurret;
     public TurretBlueprint missleLauncher;
+    public TurretBlueprint LaserBeamer;
     BulidManager bulidManager;
 
     void Start()
@@ -13,16 +14,17 @@ public class Shop : MonoBehaviour
         bulidManager = BulidManager.instance;
         
     }
-    public void SlectStandardTurret()
+    public void SelectStandardTurret()
     {
-        Debug.Log("1");
         bulidManager.SelectTurretToBulid(standardTurret);
     }
-    public void SlectMissileLauncher()
+    public void SelectMissileLauncher()
     {
-        Debug.Log("2");
         bulidManager.SelectTurretToBulid(missleLauncher);
-
     }   
+    public void SelectLaserBeamer()
+    {
+        bulidManager.SelectTurretToBulid(LaserBeamer);
+    }
 }
 

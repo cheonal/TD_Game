@@ -16,10 +16,10 @@ public class WaveSpawner : MonoBehaviour
     private int waveIndex =0;
     void Update()
     {
-        if(EnemiesAlives > 0)
+       /* if(EnemiesAlives > 0)
         {
             return;
-        }
+        }*/
 
         if(countdown <= 0f)
         {

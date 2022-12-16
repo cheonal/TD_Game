@@ -31,13 +31,14 @@ public class Node : MonoBehaviour
     {
         if (EventSystem.current.IsPointerOverGameObject())
             return;
-        if (!bulidManager.CanBulid)
-        {
-            return;
-        }
+
         if (turret != null)
         {
-            Debug.Log("cant - TODO: Display on screen.");
+            bulidManager.SelectNode(this);
+            return;
+        }
+        if (!bulidManager.CanBulid)
+        {
             return;
         }
 

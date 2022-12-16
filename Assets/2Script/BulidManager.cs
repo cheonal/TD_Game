@@ -18,6 +18,8 @@ public class BulidManager : MonoBehaviour
 
     public GameObject BuildEffect;
     private TurretBlueprint turretToBuild;
+    private Node selectedNode;
+    public NodeUI nodeUI;
 
     public bool CanBulid
     {
@@ -51,8 +53,30 @@ public class BulidManager : MonoBehaviour
 
         Debug.Log("Tureet Bulid" + PlayerStats.Money);
     }
+    public void SelectNode(Node node)
+    {
+        if(selectedNode == node)
+        {
+            DeselectNode();
+            return;
+        }
+
+
+        selectedNode = node;
+        turretToBuild = null;
+
+        nodeUI.SetTarget(node);
+    }
+    public void DeselectNode()
+    {
+        selectedNode = null;
+        nodeUI.Hide();
+    }
     public void SelectTurretToBulid(TurretBlueprint turret)
     {
         turretToBuild = turret;
+        selectedNode = null;
+
+        DeselectNode();
     }
 }

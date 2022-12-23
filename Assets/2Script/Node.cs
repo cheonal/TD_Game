@@ -9,8 +9,12 @@ public class Node : MonoBehaviour
     public Color notEnoughMoneyColor;
     public Vector3 positonOffset;
 
-    [Header("Optioanl")]
+    [HideInInspector]
     public GameObject turret;
+    [HideInInspector]
+    public TurretBlueprint turretBlueprint;
+    [HideInInspector]
+    public bool isUpgrade = false;
 
 
     private Renderer rend;
@@ -41,11 +45,52 @@ public class Node : MonoBehaviour
         {
             return;
         }
+        BuildTurret(bulidManager.GetTurretToBulid());
+    }
 
-        bulidManager.BulidTurretOn(this);
+    void BuildTurret (TurretBlueprint blueprint)
+    {
+        if (PlayerStats.Money < blueprint.cost)
+        {
+            Debug.Log("Not Money");
+            return;
+        }
+
+        PlayerStats.Money -= blueprint.cost;
+
+        turretBlueprint = blueprint;
+
+        GameObject _turret = (GameObject)Instantiate(blueprint.prefabs, GetBulidPosition(), Quaternion.identity);
+        turret = _turret;
+
+        GameObject effect = Instantiate(bulidManager.BuildEffect, GetBulidPosition(), Quaternion.identity);
+        Destroy(effect, 5f);
+
+        Debug.Log("Tureet Bulid");
+    }
+    public void UpgradeTurret()
+    {
+        if (PlayerStats.Money < turretBlueprint.upgradeCost)
+        {
+            Debug.Log("Not Money upgrade");
+            return;
+        }
+
+        PlayerStats.Money -= turretBlueprint.upgradeCost;
+
+        //기존 터렛 제거
+        Destroy(turret);
+
+        //업그레이드 된 터렛 배치
+        GameObject _turret = (GameObject)Instantiate(turretBlueprint.upgradeprefabs, GetBulidPosition(), Quaternion.identity);
+        turret = _turret;
 
 
+        GameObject effect = Instantiate(bulidManager.BuildEffect, GetBulidPosition(), Quaternion.identity);
+        Destroy(effect, 5f);
 
+        isUpgrade = true;
+        Debug.Log("Tureet upgrade");
     }
     void OnMouseEnter()
     {

@@ -35,24 +35,6 @@ public class BulidManager : MonoBehaviour
             return PlayerStats.Money >= turretToBuild.cost;
         }
     }
-    public void BulidTurretOn (Node node)
-    {
-        if(PlayerStats.Money < turretToBuild.cost)
-        {
-            Debug.Log("Not Money");
-            return;
-        }
-
-        PlayerStats.Money -= turretToBuild.cost;
-        
-        GameObject turret = (GameObject)Instantiate(turretToBuild.prefabs, node.GetBulidPosition(), Quaternion.identity);
-        node.turret = turret;
-
-        GameObject effect = Instantiate(BuildEffect, node.GetBulidPosition(), Quaternion.identity);
-        Destroy(effect, 5f);
-
-        Debug.Log("Tureet Bulid" + PlayerStats.Money);
-    }
     public void SelectNode(Node node)
     {
         if(selectedNode == node)
@@ -78,5 +60,9 @@ public class BulidManager : MonoBehaviour
         selectedNode = null;
 
         DeselectNode();
+    }
+    public TurretBlueprint GetTurretToBulid()
+    {
+        return turretToBuild;
     }
 }

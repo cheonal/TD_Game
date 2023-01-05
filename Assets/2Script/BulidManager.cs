@@ -17,6 +17,7 @@ public class BulidManager : MonoBehaviour
     }
 
     public GameObject BuildEffect;
+    public GameObject sellEffect;
     private TurretBlueprint turretToBuild;
     private Node selectedNode;
     public NodeUI nodeUI;

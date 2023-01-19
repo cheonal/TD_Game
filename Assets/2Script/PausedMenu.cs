@@ -16,7 +16,7 @@ public class PausedMenu : MonoBehaviour
 
         if (ui.activeSelf)
         {
-            //게임 속도 조절
+            //게임 속도 조절  Time.timeScale =2f; 두배속
             Time.timeScale = 0f;
         }
         else

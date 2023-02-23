@@ -557,6 +557,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 65, y: 0, z: 0}
+--- !u!114 &882660059 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4132120102295080157, guid: 626ba94be361d094dacbaad9b59b07e5, type: 3}
+  m_PrefabInstance: {fileID: 6437771950219364176}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1091863311
 GameObject:
   m_ObjectHideFlags: 0
@@ -809,6 +820,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fader: {fileID: 1447598405}
+  levelButtons:
+  - {fileID: 882660059}
+  - {fileID: 1354759569}
+  - {fileID: 0}
 --- !u!4 &1259069335
 Transform:
   m_ObjectHideFlags: 0
@@ -999,6 +1014,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1329380042}
   m_CullTransparentMesh: 1
+--- !u!114 &1354759569 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4132120102295080157, guid: 626ba94be361d094dacbaad9b59b07e5, type: 3}
+  m_PrefabInstance: {fileID: 674483987}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1398000414
 GameObject:
   m_ObjectHideFlags: 0

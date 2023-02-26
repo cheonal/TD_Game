@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18036224, g: 0.22581048, b: 0.3069686, a: 1}
+  m_IndirectSpecularColor: {r: 0.18036176, g: 0.22581048, b: 0.30696803, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -510,7 +510,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.3921569, g: 0.43921572, b: 0.4901961, a: 0}
+  m_BackGroundColor: {r: 0.42352945, g: 0.5803922, b: 0.41176474, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0

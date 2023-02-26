@@ -289,6 +289,7 @@ GameObject:
   - component: {fileID: 3553370099086653763}
   - component: {fileID: 3461625684718016385}
   - component: {fileID: 3511209708910712287}
+  - component: {fileID: -2890106913610818800}
   m_Layer: 0
   m_Name: Tower3
   m_TagString: Untagged
@@ -304,8 +305,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3555738129218520463}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.07337451, y: -0.31236935, z: 1.666924}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 3552986826264132455}
   - {fileID: 3553286071191747587}
@@ -345,6 +346,31 @@ CapsuleCollider:
   m_Height: 1.8772755
   m_Direction: 1
   m_Center: {x: 0, y: 0.99, z: 0}
+--- !u!114 &-2890106913610818800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3555738129218520463}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 286453cf04ce1824c8f6d64e906758ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: 15
+  bulletPrefab: {fileID: 7892393511270396885, guid: adaf35ead4c03b142ae8c039937fbd01, type: 3}
+  fireRate: 1
+  useLaser: 0
+  damageOverTime: 30
+  slowAmount: 0.5
+  lineRenderer: {fileID: 0}
+  impactEffect: {fileID: 0}
+  impactLight: {fileID: 0}
+  enemyTag: Enemy
+  partToRotate: {fileID: 3553370099086653763}
+  turnspeed: 10
+  firePoint: {fileID: 3553370099086653763}
 --- !u!1 &3555740708818724729
 GameObject:
   m_ObjectHideFlags: 0

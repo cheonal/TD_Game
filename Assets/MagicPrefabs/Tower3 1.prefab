@@ -291,7 +291,7 @@ GameObject:
   - component: {fileID: 3511209708910712287}
   - component: {fileID: -2890106913610818800}
   m_Layer: 0
-  m_Name: Tower3
+  m_Name: Tower3 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -306,7 +306,7 @@ Transform:
   m_GameObject: {fileID: 3555738129218520463}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 2.3, y: 2.3, z: 2.3}
   m_Children:
   - {fileID: 3552986826264132455}
   - {fileID: 3553286071191747587}
@@ -358,9 +358,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 286453cf04ce1824c8f6d64e906758ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 40
+  range: 30
   bulletPrefab: {fileID: 7892393511270396885, guid: adaf35ead4c03b142ae8c039937fbd01, type: 3}
-  fireRate: 0.4
+  fireRate: 0.25
   useLaser: 0
   damageOverTime: 30
   slowAmount: 0.5

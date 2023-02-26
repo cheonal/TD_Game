@@ -33,9 +33,13 @@ public class Turret : MonoBehaviour
 
 
     public Transform firePoint;
+
+    public bool Tower2;
+    Animator animator;
     void Start()
     {
         InvokeRepeating("UpdateTarget", 0f, 0.5f);
+        animator = GetComponent<Animator>();
     }
     void UpdateTarget()
     { 
@@ -72,6 +76,7 @@ public class Turret : MonoBehaviour
         {
             if (useLaser)
             {
+                animator.SetBool("Casting", false);
                 if (lineRenderer.enabled)
                 {
                     lineRenderer.enabled = false;
@@ -114,6 +119,7 @@ public class Turret : MonoBehaviour
 
     void Laser()
     {
+        animator.SetBool("Casting", true);
         tartgetEnemy.TakeDamage(damageOverTime * Time.deltaTime);
         tartgetEnemy.Slow(slowAmount);
         if (!lineRenderer.enabled)
@@ -135,6 +141,16 @@ public class Turret : MonoBehaviour
     }
     void Shoot()
     {
+        if (Tower2)
+        {
+            animator.SetTrigger("Attack2");
+        }
+        else
+        {
+            animator.SetTrigger("Attack1");
+        }
+
+
         GameObject bulletGo = (GameObject)Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         Bullet bullet = bulletGo.GetComponent<Bullet>();
 

@@ -1,11 +1,14 @@
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 public class PausedMenu : MonoBehaviour
 {
     public GameObject ui;
+    public Text SpeedText;
 
     public string menuSceneName = "MainMenu";
     public SceneFader sceneFader;
+    bool IsDoubleSpeed;
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.P))
@@ -15,6 +18,7 @@ public class PausedMenu : MonoBehaviour
     }
     public void Toggle()
     {
+        Time.timeScale = 1f;
         ui.SetActive(!ui.activeSelf);
 
         if (ui.activeSelf)
@@ -28,13 +32,35 @@ public class PausedMenu : MonoBehaviour
         }
     }
 
+    public void DoubleSpeed()
+    {
+        if (IsDoubleSpeed)
+        {
+            IsDoubleSpeed = false;
+            Time.timeScale = 2f;
+            SpeedText.text = "Normal Speed";
+        }
+
+        else
+        {
+            IsDoubleSpeed = true;
+            Time.timeScale = 1f;
+            SpeedText.text = "Double Speed";
+        }
+
+
+    }
+
+
     public void Retry()
     {
+        WaveSpawner.EnemiesAlives = 0;
         Toggle();
         sceneFader.FadeTo(SceneManager.GetActiveScene().name);
     }
     public void Menu()
     {
+        WaveSpawner.EnemiesAlives = 0;
         Toggle();
         sceneFader.FadeTo(menuSceneName);
     }

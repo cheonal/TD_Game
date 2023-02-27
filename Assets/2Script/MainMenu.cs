@@ -10,6 +10,11 @@ public class MainMenu : MonoBehaviour
     {
         sceneFader.FadeTo(levelToLoad);
     }
+    void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Space))
+        PlayerPrefs.DeleteAll();
+    }
 
     public void Quit()
     {
